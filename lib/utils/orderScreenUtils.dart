@@ -137,12 +137,13 @@ class TwoTextRichText extends StatelessWidget {
       TextSpan(
           text: priorText,
           style: TextStyle(
+            color: Colors.black,
             fontSize: priorFontSize,
             fontWeight: FontWeight.w500,
           )),
       TextSpan(
           text: nextText,
-          style: TextStyle(fontSize: nextFontSize, fontWeight: FontWeight.bold))
+          style: TextStyle(fontSize: nextFontSize, fontWeight: FontWeight.bold, color: Colors.black))
     ]));
   }
 }

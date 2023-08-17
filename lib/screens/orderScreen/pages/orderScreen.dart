@@ -17,6 +17,10 @@ class OrderScreen extends StatelessWidget {
             icon: const Icon(
               Icons.arrow_back_ios,
             )),
+        title: const Text(
+          "Orders",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
@@ -92,7 +96,10 @@ class OrderScreen extends StatelessWidget {
             ),
             const Text(
               "Vehicle Details:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
             const SizedBox(
               height: 6,

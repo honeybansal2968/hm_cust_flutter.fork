@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
 import 'package:hm_cust_flutter/screens/home/home.dart';
 import 'package:hm_cust_flutter/screens/signin/signin.dart';
 
@@ -21,12 +22,13 @@ class AppDrawer extends StatelessWidget {
 
   AppDrawer({super.key});
 
-  void navigateTo(int index) {
+  void navigateTo(int index,context) {
     switch (index) {
       case 0:
         // Navigate logic for Home Screen
-
-        Get.to(const MyHomePage());
+        NavigationController navigationController = Get.put(NavigationController());
+        Navigator.pop(context);
+        navigationController.changePage(0);
         break;
       case 1:
         // Navigate logic for Profile
@@ -94,7 +96,7 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     // Navigator.pop(context);
                     // controller.currentIndex.value = index;
-                    navigateTo(index);
+                    navigateTo(index,context);
                   },
                 );
               },

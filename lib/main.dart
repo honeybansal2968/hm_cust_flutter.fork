@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/getx/controllerCall.dart';
-import 'package:hm_cust_flutter/screens/home/home.dart';
+import 'package:hm_cust_flutter/screens/profile_module/pages/user_profile.dart';
 import 'package:hm_cust_flutter/screens/signin/signin.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
             useMaterial3: true,
           ),
-          home: const SignInScreen(),
+          home: SignInScreen(),
         ));
   }
 }
