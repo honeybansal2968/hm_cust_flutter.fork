@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:hm_cust_flutter/screens/home/home.dart';
+import 'package:hm_cust_flutter/screens/signin/signin.dart';
 
-import '../../getx/getxController.dart';
 
 class AppDrawer extends StatelessWidget {
   final List<String> sections = [
+    'Home',
     'Profile',
-    'Home Screen',
-    'Orders Booking',
-    'Schedule Service',
     'Payments',
     'Add to cart',
     'HM store',
@@ -17,25 +15,37 @@ class AppDrawer extends StatelessWidget {
     'Licences',
     'Help and support',
     'About us',
+    "Sign out"
   ];
 
-  final HomeController controller = Get.find();
+
+  AppDrawer({super.key});
 
   void navigateTo(int index) {
     switch (index) {
       case 0:
-      // Navigate logic for Profile
+        // Navigate logic for Home Screen
+
+        Get.to(const MyHomePage());
         break;
       case 1:
-      // Navigate logic for Home Screen
+        // Navigate logic for Profile
+
         break;
       case 2:
-      // Navigate logic for Orders Booking
+        // Navigate logic for Orders Booking
         break;
       case 3:
-      // Navigate logic for Schedule Service
+        // Navigate logic for Schedule Service
         break;
-    // Add more cases for other sections
+      case 4:
+        // Navigate logic for Payments
+        break;
+      case 11:
+        // Navigate logic for SignOut
+        Get.offAll(const SignInScreen());
+        break;
+      // Add more cases for other sections
       default:
         break;
     }
@@ -47,10 +57,10 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(top: 50, left: 20),
+            padding: const EdgeInsets.only(top: 50, left: 20),
             color: Colors.red.shade300,
             width: double.infinity,
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
@@ -75,14 +85,15 @@ class AppDrawer extends StatelessWidget {
               itemCount: sections.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 0),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                   title: Text(
                     sections[index],
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
-                    controller.currentIndex.value = index;
+                    // Navigator.pop(context);
+                    // controller.currentIndex.value = index;
                     navigateTo(index);
                   },
                 );
