@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
-import 'package:hm_cust_flutter/screens/home/home.dart';
+import 'package:hm_cust_flutter/screens/privacy_policy_module/pages/privacy_policy_page.dart';
 import 'package:hm_cust_flutter/screens/signin/signin.dart';
+import 'package:hm_cust_flutter/themes/colors.dart';
 
+NavigationController navigationController = Get.put(NavigationController());
 
 class AppDrawer extends StatelessWidget {
   final List<String> sections = [
     'Home',
-    'Profile',
     'Payments',
     'Add to cart',
     'HM store',
+    "Settings",
     'Privacy Policy',
     'Licences',
     'Help and support',
@@ -19,36 +21,55 @@ class AppDrawer extends StatelessWidget {
     "Sign out"
   ];
 
-
   AppDrawer({super.key});
 
-  void navigateTo(int index,context) {
+  void navigateTo(int index, context) {
     switch (index) {
       case 0:
         // Navigate logic for Home Screen
-        NavigationController navigationController = Get.put(NavigationController());
+
         Navigator.pop(context);
         navigationController.changePage(0);
         break;
       case 1:
-        // Navigate logic for Profile
-
+        // Navigate logic for Payments Screen
+        Navigator.pop(context);
         break;
       case 2:
-        // Navigate logic for Orders Booking
+
+        // Navigate logic for Add to cart Screen
+        Navigator.pop(context);
         break;
+
       case 3:
-        // Navigate logic for Schedule Service
+        // Navigate logic for HM store Screen
+        Navigator.pop(context);
         break;
       case 4:
-        // Navigate logic for Payments
+        // Navigate logic for Settings Screen
+        Navigator.pop(context);
         break;
-      case 11:
-        // Navigate logic for SignOut
+      case 5:
+        // Navigate logic for Privacy Policy Screen
+        Navigator.pop(context);
+        Get.to(const PrivacyPolicy());
+        break;
+      case 6:
+        // Navigate logic for Licences Screen
+        Navigator.pop(context);
+        break;
+      case 7:
+        // Navigate logic for Help and support Screen
+        Navigator.pop(context);
+        break;
+      case 8:
+        // Navigate logic for About us Screen
+        Navigator.pop(context);
+        break;
+      case 9:
+        // Navigate logic for Sign out Screen
+        Navigator.pop(context);
         Get.offAll(const SignInScreen());
-        break;
-      // Add more cases for other sections
-      default:
         break;
     }
   }
@@ -60,7 +81,17 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.only(top: 50, left: 20),
-            color: Colors.red.shade300,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  kPrimaryColor,
+                  kSecondaryColor,
+                  // Color.fromRGBO(3, 147, 204, 0.898),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
             width: double.infinity,
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +103,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'user@example.com',
+                  'Edwin Smith',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -82,7 +113,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView.separated(
+            child: ListView.builder(
               padding: EdgeInsets.zero,
               itemCount: sections.length,
               itemBuilder: (context, index) {
@@ -96,15 +127,8 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     // Navigator.pop(context);
                     // controller.currentIndex.value = index;
-                    navigateTo(index,context);
+                    navigateTo(index, context);
                   },
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: Colors.red.shade100,
-                  thickness: 1.5,
-                  height: 0,
                 );
               },
             ),

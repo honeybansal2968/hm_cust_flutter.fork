@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/getx/controllerCall.dart';
+import 'package:hm_cust_flutter/screens/chat_module/pages/chat_page.dart';
+import 'package:hm_cust_flutter/screens/home/home.dart';
+import 'package:hm_cust_flutter/screens/home/pages/home_screen.dart';
 import 'package:hm_cust_flutter/screens/profile_module/pages/user_profile.dart';
 import 'package:hm_cust_flutter/screens/signin/signin.dart';
+import 'package:hm_cust_flutter/temp.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
             useMaterial3: true,
           ),
-          home: SignInScreen(),
+          home: const MyHomePage(),
         ));
   }
 }

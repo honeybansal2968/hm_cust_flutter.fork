@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
+import 'package:hm_cust_flutter/themes/colors.dart';
 import 'package:hm_cust_flutter/utils/utils.dart';
 import 'package:hm_cust_flutter/widgets/common/drawer.dart';
 
@@ -11,7 +13,8 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: AppDrawer(),
-        appBar: CommonAppBar(), body: GetBuilder<NavigationController>(
+        appBar: const CommonAppBar(),
+        body: GetBuilder<NavigationController>(
           init: NavigationController(),
           builder: (controller) {
             return controller.currentPage;
@@ -27,25 +30,50 @@ class MyHomePage extends StatelessWidget {
               onTap: (value) {
                 controller.changePage(value);
               },
-              selectedItemColor: Colors.red.shade500,
+              selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+              selectedItemColor: kPrimaryColor,
               type: BottomNavigationBarType.fixed,
               items: [
-                BottomNavigationBarItem(
-                    label: "Home",
-                    icon: Image.asset('assets/images/home-page.png',
-                        fit: BoxFit.cover, height: 35, width: 40)),
-                BottomNavigationBarItem(
-                    label: "TAB 2",
-                    icon: Image.asset('assets/icons/Car inspectors.png',
-                        fit: BoxFit.fill, height: 35, width: 40)),
-                BottomNavigationBarItem(
-                    label: "TAB 3",
-                    icon: Image.asset('assets/icons/Detailing.png',
-                        fit: BoxFit.fill, height: 35, width: 40)),
                 const BottomNavigationBarItem(
-                    label: "TAB 4", icon: Icon(Icons.account_box_rounded)),
+                  label: "Home",
+                  activeIcon: Icon(CupertinoIcons.home, color: kPrimaryColor),
+                  icon: Icon(
+                    CupertinoIcons.home,
+                    color: inactiveColor,
+                  ),
+                ),
                 const BottomNavigationBarItem(
-                    label: "Orders", icon: Icon(Icons.shopping_cart)),
+                    label: "Chat",
+                    activeIcon: Icon(
+                      CupertinoIcons.chat_bubble_text_fill,
+                      color: kPrimaryColor,
+                    ),
+                    icon: Icon(
+                      CupertinoIcons.chat_bubble_text_fill,
+                      color: inactiveColor,
+                    )),
+                BottomNavigationBarItem(
+                    label: "Orders",
+                    activeIcon: Image.asset(
+                      'assets/icons/Detailing.png',
+                      fit: BoxFit.fill,
+                      height: 30,
+                      width: 35,
+                      color: kPrimaryColor,
+                    ),
+                    icon: Image.asset(
+                      'assets/icons/Detailing.png',
+                      fit: BoxFit.fill,
+                      height: 30,
+                      width: 30,
+                      color: inactiveColor,
+                    )),
+                const BottomNavigationBarItem(
+                    label: "Profile",
+                    activeIcon: Icon(CupertinoIcons.profile_circled,
+                        color: kPrimaryColor),
+                    icon: Icon(CupertinoIcons.profile_circled,
+                        color: inactiveColor)),
               ],
             );
           },
