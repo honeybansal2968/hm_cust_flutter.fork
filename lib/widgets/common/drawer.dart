@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hm_cust_flutter/screens/about_us_module/pages/about_us_page.dart';
+import 'package:hm_cust_flutter/screens/add_to_cart_module/pages/add_to_cart_page.dart';
+import 'package:hm_cust_flutter/screens/help_and_support_module/pages/help_support_page.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
+import 'package:hm_cust_flutter/screens/licences_module/pages/licences_page.dart';
 import 'package:hm_cust_flutter/screens/privacy_policy_module/pages/privacy_policy_page.dart';
-import 'package:hm_cust_flutter/screens/signin/signin.dart';
+import 'package:hm_cust_flutter/screens/settings_module/pages/settings_page.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
 
 NavigationController navigationController = Get.put(NavigationController());
@@ -18,7 +22,6 @@ class AppDrawer extends StatelessWidget {
     'Licences',
     'Help and support',
     'About us',
-    "Sign out"
   ];
 
   AppDrawer({super.key});
@@ -39,6 +42,7 @@ class AppDrawer extends StatelessWidget {
 
         // Navigate logic for Add to cart Screen
         Navigator.pop(context);
+        Get.to(AddToCartPage());
         break;
 
       case 3:
@@ -48,6 +52,7 @@ class AppDrawer extends StatelessWidget {
       case 4:
         // Navigate logic for Settings Screen
         Navigator.pop(context);
+        Get.to(const SettingsPage());
         break;
       case 5:
         // Navigate logic for Privacy Policy Screen
@@ -57,19 +62,19 @@ class AppDrawer extends StatelessWidget {
       case 6:
         // Navigate logic for Licences Screen
         Navigator.pop(context);
+        Get.to(LicencesPage());
         break;
       case 7:
         // Navigate logic for Help and support Screen
         Navigator.pop(context);
+        Get.to(HelpAndSupportPage());
         break;
       case 8:
         // Navigate logic for About us Screen
         Navigator.pop(context);
+        Get.to(const AboutUsPage());
         break;
-      case 9:
-        // Navigate logic for Sign out Screen
-        Navigator.pop(context);
-        Get.offAll(const SignInScreen());
+      default:
         break;
     }
   }
