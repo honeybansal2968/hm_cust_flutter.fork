@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hm_cust_flutter/screens/profile_module/controller/profile_manage.dart';
+import 'package:hm_cust_flutter/screens/profile_module/pages/profile_edit_page.dart';
+import 'package:hm_cust_flutter/themes/colors.dart';
 
 class UserProfile extends StatelessWidget {
-  const UserProfile({Key? key}) : super(key: key);
-
+  UserProfile({Key? key}) : super(key: key);
+  ProfileManage profileManageController = Get.put(ProfileManage());
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -32,7 +35,9 @@ class UserProfile extends StatelessWidget {
                       const SizedBox(height: 16),
                       FloatingActionButton.extended(
                         backgroundColor: const Color(0xff006df1),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(ProfileEditPage());
+                        },
                         heroTag: 'Edit',
                         elevation: 0,
                         label: const Text(
@@ -80,20 +85,32 @@ class ContactInfo extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) {
-            return Row(children: [
-              Text(
-                "${items[index]["title"]}: ",
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 110, 110, 110)),
-              ),
-              Text(
-                items[index]["value"]!,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 110, 110, 110)),
-              )
-            ]);
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color.fromARGB(255, 9, 129, 226)),
+                  child: Text(
+                    "${items[index]["title"]}: ",
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 255, 255, 255)),
+                  ),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  items[index]["value"]!,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 110, 110, 110)),
+                )
+              ]),
+            );
           }),
     );
   }

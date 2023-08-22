@@ -12,7 +12,7 @@ class NavigationController extends GetxController {
     const HomePage(),
     const ChatPage(),
     const UserOrders(),
-    const UserProfile(),
+     UserProfile(),
   ];
 
   Widget get currentPage => pages[currentIndex];

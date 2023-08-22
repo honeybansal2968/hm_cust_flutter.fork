@@ -7,6 +7,7 @@ import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart'
 import 'package:hm_cust_flutter/screens/licences_module/pages/licences_page.dart';
 import 'package:hm_cust_flutter/screens/privacy_policy_module/pages/privacy_policy_page.dart';
 import 'package:hm_cust_flutter/screens/settings_module/pages/settings_page.dart';
+import 'package:hm_cust_flutter/screens/userOrders/pages/user_orders.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
 
 NavigationController navigationController = Get.put(NavigationController());
@@ -14,6 +15,7 @@ NavigationController navigationController = Get.put(NavigationController());
 class AppDrawer extends StatelessWidget {
   final List<String> sections = [
     'Home',
+    "Orders",
     'Payments',
     'Add to cart',
     'HM store',
@@ -35,41 +37,61 @@ class AppDrawer extends StatelessWidget {
         navigationController.changePage(0);
         break;
       case 1:
+
+        // Navigate logic for Orders Screen
+        Navigator.pop(context);
+        Get.to(Scaffold(
+          appBar: AppBar(
+            backgroundColor: kPrimaryColor,
+            title: const Text('Orders',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold)),
+            leading: IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: const Icon(Icons.arrow_back)),
+          ),
+          body: const UserOrders(),
+        ));
+      case 2:
         // Navigate logic for Payments Screen
         Navigator.pop(context);
         break;
-      case 2:
+      case 3:
 
         // Navigate logic for Add to cart Screen
         Navigator.pop(context);
-        Get.to(AddToCartPage());
+        Get.to(const AddToCartPage());
         break;
 
-      case 3:
+      case 4:
         // Navigate logic for HM store Screen
         Navigator.pop(context);
         break;
-      case 4:
+      case 5:
         // Navigate logic for Settings Screen
         Navigator.pop(context);
         Get.to(const SettingsPage());
         break;
-      case 5:
+      case 6:
         // Navigate logic for Privacy Policy Screen
         Navigator.pop(context);
         Get.to(const PrivacyPolicy());
         break;
-      case 6:
+      case 7:
         // Navigate logic for Licences Screen
         Navigator.pop(context);
-        Get.to(LicencesPage());
+        Get.to(const LicencesPage());
         break;
-      case 7:
+      case 8:
         // Navigate logic for Help and support Screen
         Navigator.pop(context);
         Get.to(HelpAndSupportPage());
         break;
-      case 8:
+      case 9:
         // Navigate logic for About us Screen
         Navigator.pop(context);
         Get.to(const AboutUsPage());
@@ -114,11 +136,14 @@ class AppDrawer extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                )
               ],
             ),
           ),
           Expanded(
-            child: ListView.builder(
+            child: ListView.separated(
               padding: EdgeInsets.zero,
               itemCount: sections.length,
               itemBuilder: (context, index) {
@@ -136,6 +161,7 @@ class AppDrawer extends StatelessWidget {
                   },
                 );
               },
+              separatorBuilder: (context, index) => const Divider(),
             ),
           ),
         ],

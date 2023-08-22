@@ -38,22 +38,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-            onTap: () {},
-            child: const CircleAvatar(
-              radius: 23,
-              backgroundColor: Color.fromRGBO(0, 3, 197, 1),
-              child: Text(
-                "K",
-                style: TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-          ),
-        ),
-      ],
+     
     );
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/getx/controllerCall.dart';
+import 'package:hm_cust_flutter/screens/add_to_cart_module/pages/add_to_cart_page.dart';
 import 'package:hm_cust_flutter/screens/chat_module/pages/chat_page.dart';
 import 'package:hm_cust_flutter/screens/home/home.dart';
 import 'package:hm_cust_flutter/screens/home/pages/home_screen.dart';
