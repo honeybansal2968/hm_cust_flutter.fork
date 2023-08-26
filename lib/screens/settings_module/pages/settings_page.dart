@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hm_cust_flutter/screens/signin/signin.dart';
+import 'package:hm_cust_flutter/screens/signin/pages/signin.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
