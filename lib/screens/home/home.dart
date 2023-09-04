@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
+import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
 import 'package:hm_cust_flutter/utils/utils.dart';
 import 'package:hm_cust_flutter/widgets/common/drawer.dart';
 
@@ -12,6 +13,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
         drawer: AppDrawer(),
         appBar: const CommonAppBar(),
         body: GetBuilder<NavigationController>(
