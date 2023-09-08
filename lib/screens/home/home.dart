@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
         drawer: AppDrawer(),
         appBar: const CommonAppBar(),
         body: GetBuilder<NavigationController>(
@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
             return controller.currentPage;
           },
         ),
-        bottomSheet: GetBuilder<NavigationController>(
+        bottomNavigationBar: GetBuilder<NavigationController>(
           init: NavigationController(),
           builder: (controller) {
             return BottomNavigationBar(
