@@ -19,14 +19,12 @@ class BookService extends StatelessWidget {
           height: 10,
         ),
         Padding(
-          padding:  EdgeInsets.symmetric(
-              horizontal:
-               size.width < 370
-                  ?10
+          padding: EdgeInsets.symmetric(
+              horizontal: size.width < 370
+                  ? 10
                   : size.width < 400
                       ? 18
-                      : 25
-                      ),
+                      : 25),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -35,10 +33,7 @@ class BookService extends StatelessWidget {
               CustomTabButton(title: "Schedule", icon: Icons.schedule)
             ],
           ),
-          
         ),
-       
-       
       ],
     );
   }

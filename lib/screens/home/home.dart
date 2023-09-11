@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
 import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
@@ -13,7 +14,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
+        resizeToAvoidBottomInset: true,
+        extendBody: true,
+        backgroundColor: const Color.fromARGB(255, 245, 245, 245),
         drawer: AppDrawer(),
         appBar: const CommonAppBar(),
         body: GetBuilder<NavigationController>(
@@ -27,12 +30,13 @@ class MyHomePage extends StatelessWidget {
           builder: (controller) {
             return BottomNavigationBar(
               selectedIconTheme: const IconThemeData(color: Colors.teal),
-              backgroundColor: Colors.green.shade50,
+              backgroundColor: Colors.white,
               currentIndex: controller.currentIndex,
               onTap: (value) {
                 controller.changePage(value);
               },
-              selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+              selectedLabelStyle:
+                  GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14),
               selectedItemColor: kPrimaryColor,
               type: BottomNavigationBarType.fixed,
               items: [
@@ -52,6 +56,16 @@ class MyHomePage extends StatelessWidget {
                     ),
                     icon: Icon(
                       CupertinoIcons.chat_bubble_text_fill,
+                      color: inactiveColor,
+                    )),
+                const BottomNavigationBarItem(
+                    label: "SOS",
+                    activeIcon: Icon(
+                      CupertinoIcons.person_2_alt,
+                      color: Colors.red,
+                    ),
+                    icon: Icon(
+                      CupertinoIcons.person_2_alt,
                       color: inactiveColor,
                     )),
                 BottomNavigationBarItem(
