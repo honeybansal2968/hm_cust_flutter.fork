@@ -138,10 +138,13 @@ class OrderScreen extends StatelessWidget {
                 height: 86,
                 width: 86,
                 decoration: BoxDecoration(
+                  color: const Color.fromRGBO(12, 249, 143, 1),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: const Image(
-                    image: AssetImage("assets/images/main-logo.png")),
+                  image: AssetImage("assets/images/main-logo.png"),
+                  color: Color.fromRGBO(12, 249, 143, 1),
+                ),
               ),
               Expanded(
                 child: Padding(

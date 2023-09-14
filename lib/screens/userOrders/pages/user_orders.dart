@@ -120,6 +120,7 @@ class UserOrders extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 40,
+                    backgroundColor: Color.fromRGBO(12, 249, 143, 1),
                     child:
                         Image(image: AssetImage("assets/images/main-logo.png")),
                   ),

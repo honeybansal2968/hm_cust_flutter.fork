@@ -11,7 +11,6 @@ class NavigationController extends GetxController {
   final List<Widget> pages = [
     const HomePage(),
     const ChatPage(),
-    const ChatPage(),
     const UserOrders(),
     UserProfile(),
   ];

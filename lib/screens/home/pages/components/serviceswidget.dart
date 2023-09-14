@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hm_cust_flutter/screens/home/helper/constant.dart';
+import 'package:hm_cust_flutter/themes/colors.dart';
+import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
 
 class ServicesWidget extends StatelessWidget {
   const ServicesWidget({super.key});
@@ -32,8 +34,8 @@ class ServicesWidget extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return index != 5
-                  ? customServiceCard(
-                      HomeHelper.services[index], HomeHelper.servicesIcons[index])
+                  ? customServiceCard(HomeHelper.services[index],
+                      HomeHelper.servicesIcons[index])
                   : morerServicesCard();
             },
           )
@@ -50,12 +52,17 @@ class ServicesWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 2,),
-            Image.asset(serviceImage,width: 50,height: 50,),
+            const SizedBox(
+              height: 2,
+            ),
+            Image.asset(
+              serviceImage,
+              width: 50,
+              height: 50,
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
               child: Text(
-                
                 service,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.nunito(
@@ -77,7 +84,7 @@ class ServicesWidget extends StatelessWidget {
             children: [
               const Icon(
                 Icons.category_rounded,
-                color: Color.fromRGBO(15, 230, 133, 1),
+                color: Color.fromRGBO(12, 249, 143, 1),
                 size: 50,
               ),
               Text(

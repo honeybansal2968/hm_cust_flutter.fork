@@ -17,5 +17,9 @@ class DashboardController extends GetxController {
   }
 
   // visibility of floating action button
-  bool isVisible = true;
+  bool isVisible = false;
+  updateIsVisible() {
+    isVisible = !isVisible;
+    update();
+  }
 }

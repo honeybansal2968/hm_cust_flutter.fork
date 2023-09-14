@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hm_cust_flutter/themes/colors.dart';
 import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -79,7 +80,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
               const Icon(
                 Icons.location_on_rounded,
                 size: 16,
-                color: Color.fromARGB(255, 38, 207, 44),
+                color: Color.fromRGBO(12, 249, 143, 1),
               ),
               const SizedBox(
                 width: 5,
