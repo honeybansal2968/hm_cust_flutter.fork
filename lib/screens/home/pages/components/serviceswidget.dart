@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hm_cust_flutter/screens/home/helper/constant.dart';
-import 'package:hm_cust_flutter/themes/colors.dart';
-import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
+
 
 class ServicesWidget extends StatelessWidget {
   const ServicesWidget({super.key});

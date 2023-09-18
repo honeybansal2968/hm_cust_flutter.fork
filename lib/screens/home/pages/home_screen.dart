@@ -4,6 +4,7 @@ import 'package:hm_cust_flutter/screens/home/controller/dashboard_controller.dar
 import 'package:hm_cust_flutter/screens/home/pages/components/banner.dart';
 import 'package:hm_cust_flutter/screens/home/pages/components/book_service_widget.dart';
 import 'package:hm_cust_flutter/screens/home/pages/components/customColumn.dart';
+import 'package:hm_cust_flutter/screens/home/pages/components/serviceProvider.dart';
 import 'package:hm_cust_flutter/screens/home/pages/components/serviceswidget.dart';
 import 'package:hm_cust_flutter/ui_utils/custom_textfield.dart';
 
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
       init: DashboardController(),
       builder: (controller) {
         return Scaffold(
+          backgroundColor: const Color.fromARGB(255, 247, 247, 247),
           body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +43,13 @@ class HomePage extends StatelessWidget {
                   height: 15,
                 ),
                 const ServicesWidget(),
-
+                const SizedBox(
+                  height: 15,
+                ),
+                const ServiceProviderCarousel(),
+                const SizedBox(
+                  height: 50,
+                ),
                 // SizedBox(
                 //   height: 150,
                 //   child: SingleChildScrollView(

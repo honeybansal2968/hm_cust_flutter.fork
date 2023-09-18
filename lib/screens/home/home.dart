@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hm_cust_flutter/screens/home/controller/dashboard_controller.dart';
 import 'package:hm_cust_flutter/screens/home/controller/home_screen_manage.dart';
+import 'package:hm_cust_flutter/screens/home/pages/components/sos_bottom_sheet.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
 import 'package:hm_cust_flutter/utils/utils.dart';
 import 'package:hm_cust_flutter/widgets/common/drawer.dart';
@@ -47,41 +49,21 @@ class _MyHomePageState extends State<MyHomePage>
           return controller.currentPage;
         },
       ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: GetBuilder<DashboardController>(
-      //     init: DashboardController(),
-      //     builder: (dashboardController) {
-      //       return FloatingActionButton(
-      //         onPressed: () {},
-      //         child: Container(
-      //           height: 400,
-      //           color: Colors.yellow,
-      //           child: Stack(children: [
-      //             IconButton(
-      //                 onPressed: () {
-      //                   dashboardController.updateIsVisible();
-      //                 },
-      //                 icon: const Icon(Icons.add)),
-      //             Positioned(
-      //               bottom: 100,
-      //               left: 50,
-      //               child: Container(
-      //                 color: Colors.blue,
-      //                 height: 100,
-      //                 width: 40,
-      //                 child: Column(children: [
-      //                   IconButton(
-      //                       onPressed: () {}, icon: const Icon(Icons.add)),
-      //                   IconButton(
-      //                       onPressed: () {}, icon: const Icon(Icons.add)),
-      //                 ]),
-      //               ),
-      //             )
-      //           ]),
-      //         ),
-      //       );
-      //     }),
-   
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: GetBuilder<DashboardController>(
+          init: DashboardController(),
+          builder: (dashboardController) {
+            return FloatingActionButton(
+              onPressed: () {
+                SosBottomSheet.sosBottomSheet(context);
+              },
+              backgroundColor: Colors.white,
+              child: const Icon(
+                Icons.sos,
+                color: Colors.black,
+              ),
+            );
+          }),
       bottomNavigationBar: GetBuilder<NavigationController>(
         init: NavigationController(),
         builder: (controller) {
@@ -139,28 +121,8 @@ class _MyHomePageState extends State<MyHomePage>
                     ],
                   ),
                 ),
-                  InkWell(
-                  onTap: () => controller.changePage(1),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.sos_sharp,
-                        color: controller.currentIndex == 1
-                            ? kPrimaryColor
-                            : inactiveColor,
-                      ),
-                      // Text(
-                      //   'SOS',
-                      //   style: TextStyle(
-                      //     fontSize: 12,
-                      //     color: controller.currentIndex == 1
-                      //         ? kPrimaryColor
-                      //         : inactiveColor,
-                      //   ),
-                      // ),
-                    ],
-                  ),
+                const SizedBox(
+                  width: 40,
                 ),
                 InkWell(
                   onTap: () => controller.changePage(2),

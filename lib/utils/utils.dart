@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hm_cust_flutter/screens/notification_module/pages/notification.dart';
 import 'package:hm_cust_flutter/themes/colors.dart';
 import 'package:hm_cust_flutter/ui_utils/app_colors.dart';
 
@@ -29,7 +31,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               IconButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/notification");
+                    Get.to(() => NotificationPage());
                   },
                   icon: const Icon(
                     Icons.notifications,
@@ -37,8 +39,8 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
                     color: AppColors.fadedColor,
                   )),
               Positioned(
-                top: 0,
-                right: 0,
+                top: 5,
+                right: 5,
                 child: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: const BoxDecoration(
