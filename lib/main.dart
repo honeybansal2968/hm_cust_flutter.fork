@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hm_cust_flutter/screens/help_and_support_module/pages/help_support_page.dart';
 import 'screens/home/home.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: HelpAndSupportPage(),
     );
   }
 }

@@ -34,6 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    AuthController authcontroller = Get.put(AuthController());
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       body: Stack(
@@ -129,29 +130,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   ),
                                   CustomField(
                                       labelText: "First Name *",
-                                      controller: AuthController
-                                          .instance.firstNameController),
+                                      controller:
+                                          authcontroller.firstNameController),
                                   const SizedBox(
                                     height: 8,
                                   ),
                                   CustomField(
                                       labelText: "Last Name *",
-                                      controller: AuthController
-                                          .instance.lastNameController),
+                                      controller:
+                                          authcontroller.lastNameController),
                                   const SizedBox(
                                     height: 8,
                                   ),
                                   CustomField(
                                       labelText: "Email *",
-                                      controller: AuthController
-                                          .instance.emailController),
+                                      controller:
+                                          authcontroller.emailController),
                                   const SizedBox(
                                     height: 8,
                                   ),
                                   CustomField(
                                       labelText: "Phone Number *",
-                                      controller: AuthController
-                                          .instance.phoneController),
+                                      controller:
+                                          authcontroller.phoneController),
                                   const SizedBox(
                                     height: 20,
                                   ),

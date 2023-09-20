@@ -34,6 +34,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
@@ -131,7 +132,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           CustomField(
                               labelText: "Phone Number *",
                               controller:
-                                  AuthController.instance.phoneController),
+                                  authController.phoneController),
                           const SizedBox(
                             height: 20,
                           ),
